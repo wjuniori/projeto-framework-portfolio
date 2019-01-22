@@ -1,0 +1,36 @@
+{
+  "title": "framework-portfolio",
+  "name": "projeto-framework-portfolio",
+  "version": "1.0.0",
+  "description": "Dependencies and DevDependencies of the framework-portfolio website",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wjuniori/projeto-framework-portfolio.git"
+  },
+  "keywords": [
+    "framework-portfolio",
+    "",
+    "",
+    ""
+  ],
+  "author": "Washington Júnior (wjuniori.si@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wjuniori/projeto-framework-portfolio/issues",
+    "email": "wjuniori.si@gmail.com"
+  },
+  "homepage": "https://wjuniori.github.io/projeto-framework-portfolio/",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-notify": "^3.2.0"
+  }
+}
