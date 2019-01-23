@@ -25,12 +25,14 @@
   },
   "homepage": "https://wjuniori.github.io/projeto-framework-portfolio/",
   "devDependencies": {
-    "browser-sync": "^2.26.3",
+    "browser-sync": "2.26.3",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^4.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-notify": "^3.2.0"
+    "gulp-clean-css": "4.0.0",
+    "gulp-concat": "2.6.1",
+    "gulp-htmlmin": "5.0.1",
+    "gulp-notify": "3.2.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }

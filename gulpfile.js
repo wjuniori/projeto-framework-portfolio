@@ -1,21 +1,24 @@
 var gulp = require('gulp');
 var cleanCSS = require('gulp-clean-css');
 var browserSync = require('browser-sync').create();
-var imageMin = require('gulp-imagemin');
 var concat = require('gulp-concat');
 var htmlMin = require('gulp-htmlmin');
 var notify = require('gulp-notify');
 
 var cssFiles = ['./public/assets/css/**/*.css'];
-var imgFiles = [
-  './public/assets/img/**/*.jpg',
-  './public/assets/img/**/*.jpeg',
-  './public/assets/img/**/*.gif',
-  './public/assets/img/**/*.png',
-  './public/assets/img/**/*.svg',
-  '!./public/assets/img/originals/**/*'
-];
+var cssFrameworkFiles = ['./vendor/css-framework/css/**/main.css'];
 var htmlFile = ['./public/assets/*.html'];
+
+// Copy third party libraries from /node_modules into /vendor
+gulp.task('vendor', function() {
+  
+  // normalize.css
+  gulp.src([
+    './node_modules/normalize.css/normalize.css'
+  ])
+  .pipe(gulp.dest('./vendor/normalize.css'))
+
+});
 
 // Minify HTML
 gulp.task('html:minify', function() {
@@ -40,18 +43,20 @@ gulp.task('css:minify', function() {
     .pipe(browserSync.stream());
 });
 
-// CSS
-gulp.task('css', ['css:minify']);
-
-// Minify Image
-gulp.task('img', function() {
-  return gulp.src(imgFiles)
-    .pipe(imageMin())
-    .pipe(gulp.dest('./public/dist/img/'));
+// Minify CSS Framework
+gulp.task('css:framework:minify', function() {
+  return gulp.src(cssFrameworkFiles)
+    .pipe(cleanCSS())
+    .pipe(concat('main.min.css'))
+    .pipe(gulp.dest('./vendor/css-framework/css'))
+    .pipe(browserSync.stream());
 });
 
+// CSS
+gulp.task('css', ['css:minify', 'css:framework:minify']);
+
 // Default task
-gulp.task('default', ['html', 'css', 'img']);
+gulp.task('default', ['html', 'css', 'vendor']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -63,8 +68,8 @@ gulp.task('browserSync', function() {
 });
 
 //Dev task
-gulp.task('dev', ['html', 'css', 'img', 'browserSync'], function() {
-  gulp.watch(cssFiles, ['css']);
-  gulp.watch(imgFiles, ['img']);
+gulp.task('dev', ['html', 'css', 'vendor', 'browserSync'], function() {
+  gulp.watch(cssFiles, ['css:minify']);
+  gulp.watch(cssFrameworkFiles, ['css:framework:minify']);
   gulp.watch(htmlFile, ['html']);
 });

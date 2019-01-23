@@ -6,4 +6,51 @@
 
 /* ********** PALETA DE CORES **********
 
+- Laranja: #f8981c; rgb(248,152,28)
+- Cinza: #bcbbbb; rgb(188,187,187)
+- Verde: #747704; rgb(116,119,4)
+
 */
+
+* {
+  color: #747704;
+  font-family: 'Lato', sans-serif;
+}
+
+/* ********** HEADER ********** */
+
+header img {
+  margin-top: 10px;
+}
+
+.info-card {
+  text-align: right;
+}
+
+.info-card, .portfolio-item h3 {
+  text-transform: uppercase;
+}
+
+/* ********** PORTFOLIO-COVER SECTION ********** */
+
+.porfolio-cover hr {
+  border: 1px solid #bcbbbb;
+}
+
+.porfolio-cover img, .portfolio-item img {
+  width: 100%;
+}
+
+/* ********** PORTFOLIO SECTION ********** */
+
+.porfolio h2 {
+  color: #bcbbbb;
+}
+
+.portfolio-item {
+  text-align: center;
+}
+
+.portfolio-item a {
+  text-decoration: none;
+}
