@@ -12,45 +12,50 @@
 
 */
 
-* {
-  color: #747704;
+body {
   font-family: 'Lato', sans-serif;
+  color: #747704;
+  font-weight: 300;
 }
 
-/* ********** HEADER ********** */
-
-header img {
-  margin-top: 10px;
+.title-logo {
+  margin-top: 20px;
 }
 
-.info-card {
+.text-right {
   text-align: right;
 }
 
-.info-card, .portfolio-item h3 {
+.text-uppercase {
   text-transform: uppercase;
 }
 
-/* ********** PORTFOLIO-COVER SECTION ********** */
+.title-super {
+  font-size: 60px;
+} 
 
-.porfolio-cover hr {
+.text-thin {
+  font-weight: 100;
+}
+
+hr {
   border: 1px solid #bcbbbb;
 }
 
-.porfolio-cover img, .portfolio-item img {
-  width: 100%;
+.img-fluid {
+  max-width: 100%;
+  height: auto;
 }
 
-/* ********** PORTFOLIO SECTION ********** */
-
-.porfolio h2 {
+.text-muted {
   color: #bcbbbb;
 }
 
-.portfolio-item {
+.text-center {
   text-align: center;
 }
 
-.portfolio-item a {
+a {
   text-decoration: none;
+  color: #747704;
 }
